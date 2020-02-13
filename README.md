@@ -1,4 +1,6 @@
 # `Template: Json Schema Validation`
+![Java CI](https://github.com/anilkulkarni87/JsonSchema/workflows/Java%20CI/badge.svg?branch=master)
+
 This is a template project for implementing json schema validations. Json schema can be defined
 for any complex structure. I think that is the most time consuming part, but once defined correctly
 it provides a very effective validate json data files. 
