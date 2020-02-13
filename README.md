@@ -5,16 +5,16 @@ it provides a very effective validate json data files.
 * [**Json Schema file**](src/main/resources/customer_schema.json)
 * [**Json data files**](src/main/json/)
 
-###Steps:
+### Steps:
 * Define schema for the json objects
 * Create sample json files
 
-###How to execute:
+### How to execute:
 ```
 gradle clean validateCustomJson
 ```
 
-####Output for current schema and json files
+#### Output for current schema and json files
 ```text
 * What went wrong:
 Execution failed for task ':validateCustomJson'.
@@ -27,7 +27,7 @@ Execution failed for task ':validateCustomJson'.
   #/customerIdentity/age: 22.0 is not a multiple of 3
 ```
 
-###References
+### References
 * [**Json Schema Official site**](http://json-schema.org/)
 * [**Gradle plugin for schema validator**](https://github.com/alenkacz/gradle-json-validator)
 * [**Computer Science Dept PUC Chile**](https://cswr.github.io/JsonSchema/)
