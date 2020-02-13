@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'cz.alenkacz.gradle:json-validator:1.2.1'
+    }
+}
+plugins {
+    id 'java'
+}
+apply plugin: 'json-validator'
+
+import cz.alenkacz.gradle.jsonvalidator.ValidateJsonTask
+
+
+group 'com.lina'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task validateCustomJson(type: ValidateJsonTask) {
+    //targetJsonFile = file("src/main/json/customer2.json") // only one of targetJsonFile or targetJsonDirectory can be specified
+    targetJsonDirectory = file("src/main/json") // only one of targetJsonFile or targetJsonDirectory can be specified
+    jsonSchema = file("src/main/resources/customer_schema.json")
+    onlyWithJsonExtension = true // default is false, this makes sense only when using targetJsonDirectory, it ignores all files apart from those who do not have .json file extension
+}
